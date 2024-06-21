@@ -5,7 +5,7 @@ let userStarts;
 function startGame() {
     limit = parseInt(document.getElementById('limitInput').value);
     if (isNaN(limit) || limit <= 0) {
-        alert("Please enter a valid limit.");
+        showModal("Please enter a valid limit.");
         return;
     }
 
@@ -27,7 +27,7 @@ function startGame() {
 function userTurn() {
     let userInput = parseInt(document.getElementById('userInput').value);
     if (userInput !== 1 && userInput !== 2) {
-        showModal();
+        showModal("Please choose either 1 or 2.");
         return;
     }
 
@@ -84,8 +84,9 @@ function resetGame() {
     document.getElementById('winMessage').innerText = '';
 }
 
-function showModal() {
+function showModal(message) {
     const modal = document.getElementById('invalidInputModal');
+    modal.querySelector('p').innerText = message;
     modal.style.display = "block";
 }
 
