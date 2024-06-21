@@ -11,6 +11,7 @@ function startGame() {
 
     document.getElementById('gameSection').classList.remove('hidden');
     document.getElementById('limitInput').disabled = true;
+    document.getElementById('startBtn').style.backgroundColor = "#888";
     document.getElementById('gameMessage').innerText = "Great! Let's start! Good luck!";
 
     userStarts = (limit % 3 !== 1);
@@ -36,7 +37,7 @@ function userTurn() {
     document.getElementById('userInput').value = '';
 
     if (currentValue >= limit) {
-        document.getElementById('winMessage').innerText = "Congratulations! You managed to win! This wasn't supposed to happen...";
+        document.getElementById('winMessage').innerHTML = "<b>Congratulations!</b> You win! You Beat SAi.";
         disableGameInputs();
         return;
     }
@@ -57,7 +58,7 @@ function aiTurn() {
     document.getElementById('aiInput').value = aiInput;
 
     if (currentValue >= limit) {
-        document.getElementById('winMessage').innerText = "SAi Wins! Better luck next time human! Adios!";
+        document.getElementById('winMessage').innerHTML = "<b>SAi Wins!</b> Better luck next time human! Adios!";
         disableGameInputs();
     } else {
         document.getElementById('userInput').disabled = false;

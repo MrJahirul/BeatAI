@@ -8,11 +8,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Beat AI</h1>
+        <h1>Beat <span class="ai">AI</span></h1>
+        <div class="underLine"><img src="img/underLine.png" alt="under Line" width="100px" height=""></div>
         <p>Hello user! I am Sentient AI aka SAi.</p>
-        <p>First, choose the limit:</p>
+        <!-- <p>First, choose the limit:</p> -->
         <input type="number" id="limitInput" placeholder="Enter the limit">
-        <button onclick="startGame()">Start Game</button>
+        <button onclick="startGame()" id="startBtn">Start Game</button>
         <div id="gameSection" class="hidden">
             <p id="gameMessage"></p>
             <div class="inputs">
