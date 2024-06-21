@@ -1,41 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/facIcon.jpg" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/facIcon.jpg" type="image/x-icon" />
     <title>Beat AI</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <div class="container mainContainer">
-        <!-- <p class="aiChoose">AI CHOOSE=2</p> -->
-        <h1 class="title">Beat <span class="ai">AI</span></h1>
-        <div class="underLine"><img src="img/underLine.png" alt="under Line" width="100px" height=""></div>
-        <p>Hello user! I am Sentient AI aka SAi.</p>
-        <!-- <p>First, choose the limit:</p> -->
-        <input type="number" id="limitInput" placeholder="Enter the limit First">
-        <button onclick="startGame()">Start Game</button>
-        <div id="gameSection" class="hidden">
-            <p id="gameMessage"></p>
-            <div class="inputs">
-                <input type="number" id="userInput" placeholder="Your turn (1 or 2)" disabled>
-                <button id="userSubmit" onclick="userTurn()" disabled>Submit</button>
-                <input type="number" id="aiInput" placeholder="AI turn" readonly>
-                <input type="number" id="countCard" placeholder="Current Count" readonly>
-            </div>
-            <p id="winMessage"></p>
+      <!-- <p class="aiChoose">AI CHOOSE=2</p> -->
+      <h1 class="title">Beat <span class="ai">AI</span></h1>
+      <div class="underLine">
+        <img src="img/underLine.png" alt="under Line" width="100px" height="" />
+      </div>
+      <p>Hello user! I am Sentient AI aka SAi.</p>
+      <!-- <p>First, choose the limit:</p> -->
+      <input
+        type="number"
+        id="limitInput"
+        placeholder="Enter the limit First"
+      />
+      <button onclick="startGame()">Start Game</button>
+      <div id="gameSection" class="hidden">
+        <p id="gameMessage"></p>
+        <div class="inputs">
+          <input
+            type="number"
+            id="userInput"
+            placeholder="Your turn (1 or 2)"
+            disabled
+          />
+          <button id="userSubmit" onclick="userTurn()" disabled>Submit</button>
+          <input type="number" id="aiInput" placeholder="AI turn" readonly />
+          <input
+            type="number"
+            id="countCard"
+            placeholder="Current Count"
+            readonly
+          />
         </div>
+        <p id="winMessage"></p>
+      </div>
     </div>
 
     <!-- Modal for invalid input -->
     <div id="invalidInputModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <p>Invalid input</p>
-        </div>
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <p>Invalid input</p>
+      </div>
+    </div>
+
+    <div class="floating-button" onclick="toggleFloatingContent()">+</div>
+    <div id="floatingContent" class="floating-content hidden">
+      <span class="close" onclick="toggleFloatingContent()">&times;</span>
+      <p class="context">
+        <b>Game title:</b> Illusion of Choice Objective: Users will be given choices
+        and the impression that they can win, but the system will always win!
+        <br>
+        <b>Game rules:</b> It is a two-player game between a human and a computer
+        program. One player can choose one or two integers starting from 1, and
+        the other must pick up the next one or two integers. There will be a
+        predefined limit (user input); whoever gets to pick that integer wins
+        the game! 
+        <br>
+       <b>Example game:</b>  Hello user! I am Sentient AI aka SAi.
+        Welcome to the Beat AI game! I'll play with you a simple
+        game, try to defeat me if you dare!,<br> choose the limit: 10(user choose any number)
+        <br>SAi chooses: 1 
+        <br>How many turn(s) do you wish? (Only 1 or 2): 1 (Current value = 2)
+        <br>SAi chooses: 2 (Current value = 4)
+        <br>How many turn(s) do you wish? (Only 1 or 2): 2 
+        chooses:2 (Current value = 6) 
+        <br>SAi chooses: 1 (Current value = 7) 
+        <br>How many turn(s) do you wish? (Only 1 or
+        2): 3 (user input Ha! That's wrong choice!) 
+        <br>How many turn(s) do you wish? (Only 1 or 2): 2 (Current value = 9)
+        <br>SAi chooses: 1  (Current value = 10) 
+        <br>SAi Wins!
+      </p>
     </div>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

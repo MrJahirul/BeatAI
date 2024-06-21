@@ -82,6 +82,7 @@ button:hover {
 .modal {
     display: none; 
     position: fixed; 
+    padding-top: 130px;
     z-index: 1; 
     left: 0;
     top: 0;
@@ -125,6 +126,45 @@ button:hover {
     margin-top: -25px;
     margin-left: -50px;
     position: absolute;
+}
+/* Floating button styles */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3553ff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.floating-content {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 300px;
+    z-index: 10;
+}
+
+.floating-content.hidden {
+    display: none;
+}
+.context{
+    overflow: scroll;
+    font-size: 12px;
 }
 
 

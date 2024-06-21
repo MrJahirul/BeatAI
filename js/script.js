@@ -11,7 +11,7 @@ function startGame() {
 
     document.getElementById('gameSection').classList.remove('hidden');
     document.getElementById('limitInput').disabled = true;
-    document.getElementById('limitInput').style.backgroundColor = "ash";
+    document.getElementById('limitInput').style.backgroundColor = "#636d79";
     document.getElementById('limitInput').style.color = "white";
     document.getElementById('gameMessage').innerText = "Good luck!";
 
@@ -101,4 +101,13 @@ function showModal(message) {
 
 function closeModal() {
     document.getElementById('invalidInputModal').style.display = "none";
+}
+
+function toggleFloatingContent() {
+    const floatingContent = document.getElementById('floatingContent');
+    if (floatingContent.classList.contains('hidden')) {
+        floatingContent.classList.remove('hidden');
+    } else {
+        floatingContent.classList.add('hidden');
+    }
 }
