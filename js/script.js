@@ -11,8 +11,9 @@ function startGame() {
 
     document.getElementById('gameSection').classList.remove('hidden');
     document.getElementById('limitInput').disabled = true;
-    document.getElementById('startBtn').style.backgroundColor = "#888";
-    //document.getElementById('gameMessage').innerText = "Great! Let's start! Good luck!";
+    document.getElementById('limitInput').style.backgroundColor = "ash";
+    document.getElementById('limitInput').style.color = "white";
+    document.getElementById('gameMessage').innerText = "Good luck!";
 
     userStarts = (limit % 3 !== 1);
     if (userStarts) {
@@ -37,6 +38,7 @@ function userTurn() {
     document.getElementById('userInput').value = '';
 
     if (currentValue >= limit) {
+        document.getElementById('countCard').value = "Reached";
         document.getElementById('countCard').classList.add('reached-limit');
         document.getElementById('winMessage').innerHTML = "<b>Congratulations!</b> You win! You Beat SAi.";
         disableGameInputs();
@@ -54,13 +56,15 @@ function aiTurn() {
     if ((limit - currentValue) === 1) aiInput = 1; // Ensure AI wins if only 1 is left
     if ((limit - currentValue) === 2) aiInput = 2; // Ensure AI wins if only 2 are left
 
+
     currentValue += aiInput;
     document.getElementById('countCard').value = currentValue;
     document.getElementById('aiInput').value = aiInput;
 
     if (currentValue >= limit) {
+        document.getElementById('countCard').value = "Reached";
         document.getElementById('countCard').classList.add('reached-limit');
-        document.getElementById('winMessage').innerHTML = "<b>SAi Wins!</b> Better luck next time human! Adios!";
+        document.getElementById('winMessage').innerHTML = "<b>SAi Wins! Better luck next time human! Adios!</b>";
         disableGameInputs();
     } else {
         document.getElementById('userInput').disabled = false;
@@ -87,9 +91,6 @@ function resetGame() {
     document.getElementById('countCard').classList.remove('reached-limit');
     document.getElementById('gameMessage').innerText = '';
     document.getElementById('winMessage').innerText = '';
-    document.getElementById('startBtn').style.backgroundColor = "";
-
-
 }
 
 function showModal(message) {
@@ -99,6 +100,5 @@ function showModal(message) {
 }
 
 function closeModal() {
-    const modal = document.getElementById('invalidInputModal');
-    modal.style.display = "none";
+    document.getElementById('invalidInputModal').style.display = "none";
 }

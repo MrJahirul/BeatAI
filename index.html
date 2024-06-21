@@ -2,37 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" cotent="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/facIcon.jpg" type="image/x-icon">
     <title>Beat AI</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
-    <div class="container">
-        <div class="pyro">
-            <div class="before"></div>
-          
-        <h1>Beat <span class="ai">AI</span></h1>
+    <div class="container mainContainer">
+        <!-- <p class="aiChoose">AI CHOOSE=2</p> -->
+        <h1 class="title">Beat <span class="ai">AI</span></h1>
         <div class="underLine"><img src="img/underLine.png" alt="under Line" width="100px" height=""></div>
         <p>Hello user! I am Sentient AI aka SAi.</p>
         <!-- <p>First, choose the limit:</p> -->
-        <input type="number" id="limitInput" placeholder="Enter the limit">
-        <button onclick="startGame()" id="startBtn">Start Game</button>
+        <input type="number" id="limitInput" placeholder="Enter the limit First">
+        <button onclick="startGame()">Start Game</button>
         <div id="gameSection" class="hidden">
             <p id="gameMessage"></p>
             <div class="inputs">
                 <input type="number" id="userInput" placeholder="Your turn (1 or 2)" disabled>
                 <button id="userSubmit" onclick="userTurn()" disabled>Submit</button>
-                <input type="number" id="aiInput" placeholder="AI turn (1 or 2)" readonly>
+                <input type="number" id="aiInput" placeholder="AI turn" readonly>
                 <input type="number" id="countCard" placeholder="Current Count" readonly>
             </div>
             <p id="winMessage"></p>
         </div>
-        <div class="after"></div>
-    </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal for invalid input -->
     <div id="invalidInputModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
