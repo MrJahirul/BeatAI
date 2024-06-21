@@ -12,7 +12,7 @@ function startGame() {
     document.getElementById('gameSection').classList.remove('hidden');
     document.getElementById('limitInput').disabled = true;
     document.getElementById('startBtn').style.backgroundColor = "#888";
-    document.getElementById('gameMessage').innerText = "Great! Let's start! Good luck!";
+    //document.getElementById('gameMessage').innerText = "Great! Let's start! Good luck!";
 
     userStarts = (limit % 3 !== 1);
     if (userStarts) {
@@ -37,6 +37,7 @@ function userTurn() {
     document.getElementById('userInput').value = '';
 
     if (currentValue >= limit) {
+        document.getElementById('countCard').classList.add('reached-limit');
         document.getElementById('winMessage').innerHTML = "<b>Congratulations!</b> You win! You Beat SAi.";
         disableGameInputs();
         return;
@@ -58,6 +59,7 @@ function aiTurn() {
     document.getElementById('aiInput').value = aiInput;
 
     if (currentValue >= limit) {
+        document.getElementById('countCard').classList.add('reached-limit');
         document.getElementById('winMessage').innerHTML = "<b>SAi Wins!</b> Better luck next time human! Adios!";
         disableGameInputs();
     } else {
@@ -76,13 +78,18 @@ function resetGame() {
     currentValue = 0;
     document.getElementById('limitInput').value = '';
     document.getElementById('limitInput').disabled = false;
+    document.getElementById('limitInput').style.backgroundColor = ""; // Reset background color
     document.getElementById('gameSection').classList.add('hidden');
     document.getElementById('userInput').disabled = true;
     document.getElementById('userSubmit').disabled = true;
     document.getElementById('countCard').value = '';
     document.getElementById('aiInput').value = '';
+    document.getElementById('countCard').classList.remove('reached-limit');
     document.getElementById('gameMessage').innerText = '';
     document.getElementById('winMessage').innerText = '';
+    document.getElementById('startBtn').style.backgroundColor = "";
+
+
 }
 
 function showModal(message) {

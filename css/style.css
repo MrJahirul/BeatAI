@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    /* background-color: #9dd0f779; */
+    background: #0a3968ed;
     margin: 0;
     padding: 0;
     display: flex;
@@ -58,6 +59,15 @@ button {
 button:disabled {
     background-color: #cccccc;
 }
+/* Highlight input when limit is reached */
+.reached-limit {
+    background: linear-gradient(rgba(88, 236, 192, 0.634),rgba(34, 227, 57, 0.426),rgba(240, 116, 209, 0.327));
+    /* background-color: yellow; */
+    color:white;
+    text-align: center;
+    font-weight: bold;
+    font-weight: 600;
+}
 
 /* Modal styles */
 .modal {
@@ -102,3 +112,49 @@ button:hover{
     background: rgb(50, 240, 50);
     font-weight: 600;
 }
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        position: absolute;
+        margin-top: -200px;
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    input[type="number"] {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* @media (max-width: 480px) {
+    .container {
+        max-width: 95%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    input[type="number"] {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    /* } */
+
